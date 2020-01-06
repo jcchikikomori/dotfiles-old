@@ -5,7 +5,6 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 	osx
 	common-aliases
-	history
 	command-not-found
 	colored-man-pages
 	tmux
@@ -16,17 +15,17 @@ antigen bundles <<EOBUNDLES
 	systemd
 	sudo
 	lol
-	zdharma/fast-syntax-highlighting
 	zsh-users/zsh-completions
 	zsh-users/zsh-autosuggestions
+	zsh-users/zsh-syntax-highlighting
 	zsh-users/zsh-history-substring-search
-	unixorn/autoupdate-antigen.zshplugin
-	z
+	zdharma/fast-syntax-highlighting
+	# HeroCC/LS_COLORS
 EOBUNDLES
 
 # NVM bundle
-antigen bundle lukechilds/zsh-nvm
-antigen bundle Sparragus/zsh-auto-nvm-use
+# antigen bundle lukechilds/zsh-nvm
+# antigen bundle Sparragus/zsh-auto-nvm-use
 
 # Load the theme @ https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/
 # Load the theme
