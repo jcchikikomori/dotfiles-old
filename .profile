@@ -1,3 +1,6 @@
+# system installed libs
+source /etc/profile
+
 # qt5 specific
 export QT_QPA_PLATFORMTHEME="qt5ct"
 # default editor
