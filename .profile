@@ -8,8 +8,11 @@ export EDITOR=/usr/bin/nano
 # gtk2 specific
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+# phpbrew
+export PHPBREW_SET_PROMPT=1
+export PHPBREW_RC_ENABLE=1
+
 # byobu
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
