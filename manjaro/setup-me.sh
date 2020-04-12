@@ -37,10 +37,19 @@ read -p "Press any key to continue ..."
 clear
 
 echo "Updating pacman mirrors ..."
-sudo pacman-mirrors --fasttrack 8 && sudo pacman -Syyu
+sudo pacman-mirrors --fasttrack
 
-echo "Setup yay, git ..."
-sudo pacman -S yay git
+echo "Updating your system ..."
+sudo pacman -Syyu --noconfirm
+
+echo "Setup yay & git ..."
+sudo pacman -S yay git --noconfirm
 
 echo "Installing required packages ..."
-yay -S glances byobu rbenv rbenv-binstubs copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
+yay --noconfirm -S glances byobu copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
+
+echo "Install common web packages ..."
+yay --noconfirm -S xsel composer mkcert rbenv rbenv-binstubs ruby-build
+
+read -p "Setup done! Press any key to exit ..."
+

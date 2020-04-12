@@ -14,6 +14,9 @@ export PHPBREW_RC_ENABLE=1
 
 # byobu
 
+# composer
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -22,3 +25,4 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # NVM
 source /usr/share/nvm/init-nvm.sh
+_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
