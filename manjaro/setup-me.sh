@@ -85,6 +85,7 @@ echo ".                .;c:lodk000OkkOOO0Oxdo:'.  'OMMMM"
 echo "                 .;lx00O0KKKOddxkkxdl:,'.';o0WMMMM"
 echo "                .lONMMMMMMMWXXNNNNNWWNXKKXNWMMMMMM"
 echo "               'xNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+echo ""
 
 read -p "Setup done! Press any key to exit ..."
 
