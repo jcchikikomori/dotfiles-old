@@ -94,12 +94,8 @@ if $USES_ZSH ; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     curl -L git.io/antigen > $HOME/antigen.zsh
     echo "Installing shell packages ..."
-    git clone https://github.com/powerline/fonts.git --depth=1
-    sh fonts/install.sh
-    rm -rf fonts
-    # git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
-    # sh nerd-fonts/install.sh
-    # rm -rf nerd-fonts
+    brew tap homebrew/cask-fonts
+    brew cask install font-hack-nerd-font
     brew install glances byobu
     echo "Byobu adjustments ..."
     ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
