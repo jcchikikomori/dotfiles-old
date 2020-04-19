@@ -4,43 +4,42 @@ source /usr/share/zsh/share/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
+# bundle antigen zsh plugins @ https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
 antigen bundles <<EOBUNDLES
-archlinux
-common-aliases
-command-not-found
-colored-man-pages
-# magic-enter
-# extract
-tmux
-# php
-nodejs
-ruby
-git
-arialdomartini/oh-my-git
-systemd
-sudo
-lol
-
-# ssh-agent
-
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-HeroCC/LS_COLORS
-# rupa/z
+	osx
+	common-aliases
+	command-not-found
+	colored-man-pages
+	tmux
+	nodejs
+	ruby
+	git
+	arialdomartini/oh-my-git
+	systemd
+	sudo
+	lol
+	zsh-users/zsh-completions
+	zsh-users/zsh-autosuggestions
+	zsh-users/zsh-syntax-highlighting
+	zsh-users/zsh-history-substring-search
+	zdharma/fast-syntax-highlighting
+	# HeroCC/LS_COLORS
 EOBUNDLES
 
-# Syntax highlighting bundle.
-# antigen bundle zsh-users/zsh-syntax-highlighting
+# NVM bundle
+# antigen bundle lukechilds/zsh-nvm
+# antigen bundle Sparragus/zsh-auto-nvm-use
 
-# Load the theme.
-# antigen theme robbyrussell
+# Load the theme @ https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/
+# Load the theme
+# simple and fast
+antigen theme steeef
+# cool but slow
+# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+# antigen theme romkatv/powerlevel10k
 
-antigen theme romkatv/powerlevel10k
-#source $HOME/.zsh/themes/p10k-lean.zsh
-#antigen theme $HOME/.zsh/themes bira-cust --no-local-clone
-antigen apply # Use it
+# ANTIGEN APPLY CHANGES
+antigen apply
 
 # Source all the configs
 # source ~/.zsh/history.zsh
