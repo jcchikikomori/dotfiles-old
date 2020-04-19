@@ -34,7 +34,7 @@ clear
 echo "============================="
 echo "  DOTFILES by jcchikikomori  "
 echo "  MacOS Edition              "
-echo "  Requires Mojave+           "
+echo "  Requires Mojave+ & ITerm2  "
 echo "============================="
 echo ""
 read -p "Press any key to continue ..."
@@ -112,6 +112,7 @@ if $USES_ZSH ; then
     clear
 
     milk_me
+    echo "Please execute `p10k configure` on your iTerm terminal"
     read -p "Setup done! Press any key to exit ..."
     exec $SHELL
 fi
