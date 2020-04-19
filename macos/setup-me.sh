@@ -97,9 +97,9 @@ if $USES_ZSH ; then
     git clone https://github.com/powerline/fonts.git --depth=1
     sh fonts/install.sh
     rm -rf fonts
-    git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
-    sh nerd-fonts/install.sh
-    rm -rf nerd-fonts
+    # git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
+    # sh nerd-fonts/install.sh
+    # rm -rf nerd-fonts
     brew install glances byobu
     echo "Byobu adjustments ..."
     ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
