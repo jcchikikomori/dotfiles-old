@@ -67,7 +67,7 @@ read -p "Press any key to continue ..."
 clear
 
 # homebrew update
-brew update
+# brew update
 
 case $SHELL in
 */bash)
@@ -92,16 +92,22 @@ esac
 if $USES_ZSH ; then
     echo "Initializing oh-my-zsh & antigen ..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    curl -L git.io/antigen > antigen.zsh
+    curl -L git.io/antigen > $HOME/antigen.zsh
     echo "Installing shell packages ..."
-    brew install glances byobu awesome-terminal-fonts powerline2 powerline-fonts powerline-common
+    git clone https://github.com/powerline/fonts.git --depth=1
+    sh fonts/install.sh
+    rm -rf fonts
+    git clone https://github.com/ryanoasis/nerd-fonts.git
+    sh nerd-fonts/install.sh
+    rm -rf nerd-fonts
+    brew install glances byobu
     echo "Byobu adjustments ..."
     ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
     rm ~/.byobu/.tmux.conf
     ln -s ~/.tmux.conf ~/.byobu/.tmux.conf
     ln -s ~/.tmux.conf.local ~/.byobu/.tmux.conf.local
     echo "Install common web packages ..."
-    brew install xsel composer mkcert rbenv rbenv-binstubs ruby-build nvm
+    brew install composer mkcert rbenv ruby-build nvm
     echo "Copy config ..."
     cp -rf .teamocil/ ~/
     cp -rf .tmux/ ~/
@@ -111,5 +117,6 @@ if $USES_ZSH ; then
 
     milk_me
     read -p "Setup done! Press any key to exit ..."
+    exec $SHELL
 fi
 
