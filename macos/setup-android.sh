@@ -53,6 +53,7 @@ android update sdk --no-ui
 
 echo "Init environment variables ..."
 echo "\n" >> $HOME/.profile
+echo "export JAVA_HOME=`/usr/libexec/java_home -v 1.8`" >> $HOME/.profile
 echo "export ANT_HOME=\"/usr/local/opt/ant\"" >> $HOME/.profile
 echo "export MAVEN_HOME=\"/usr/local/opt/maven\"" >> $HOME/.profile
 echo "export GRADLE_HOME=\"/usr/local/opt/gradle\"" >> $HOME/.profile
