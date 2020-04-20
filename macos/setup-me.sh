@@ -96,7 +96,7 @@ if $USES_ZSH ; then
     echo "Installing shell packages ..."
     brew tap homebrew/cask-fonts
     brew cask install font-hack-nerd-font
-    brew install glances byobu
+    brew install glances gotop byobu
     echo "Byobu adjustments ..."
     ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
     rm ~/.byobu/.tmux.conf
