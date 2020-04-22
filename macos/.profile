@@ -1,6 +1,10 @@
 # system installed libs
 source /etc/profile
 
+# homebrew & colors
+export PATH="/usr/local/sbin:$PATH"
+export TERM=xterm-256color
+
 # qt5 specific
 export QT_QPA_PLATFORMTHEME="qt5ct"
 # default editor

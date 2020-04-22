@@ -275,6 +275,7 @@ tmux_conf_copy_to_os_clipboard=true
 # this is the place to override or undo settings
 
 # colours
+set -g default-terminal "screen-256color"
 # source-file "${HOME}/.tmux-themepack/powerline/block/green.tmuxtheme"
 
 # increase history size
