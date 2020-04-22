@@ -5,8 +5,7 @@
 - zsh
 - oh-my-zsh
 - antigen (zsh plugin manager)
-- glances
-- tmux (or install byobu package)
+- tmux & byobu
 - teamocil
 
 ## How to?
