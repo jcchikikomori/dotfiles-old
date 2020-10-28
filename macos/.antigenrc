@@ -1,5 +1,5 @@
 # Add Antigen
-source /usr/share/zsh/share/antigen.zsh
+source $HOME/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -33,9 +33,9 @@ EOBUNDLES
 # Load the theme @ https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/
 # Load the theme
 # simple and fast
-antigen theme steeef
+# antigen theme steeef
 # cool but slow
-# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 # antigen theme romkatv/powerlevel10k
 
 # ANTIGEN APPLY CHANGES
