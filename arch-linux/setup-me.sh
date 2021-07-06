@@ -46,7 +46,7 @@ echo "Setup yay & git ..."
 sudo pacman -S yay git --noconfirm
 
 echo "Installing required packages ..."
-yay --noconfirm -S glances byobu copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
+yay --noconfirm -S keychain glances byobu copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
 
 echo "Install common web packages ..."
 yay --noconfirm -S xsel composer mkcert rbenv rbenv-binstubs ruby-build

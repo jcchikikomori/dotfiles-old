@@ -103,6 +103,9 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# automatically add ssh keys to keychain
+eval $(keychain --eval --quiet ~/.ssh/id_rsa)
+
 # Override profile
 source ~/.profile
 
