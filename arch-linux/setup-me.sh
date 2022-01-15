@@ -46,7 +46,7 @@ echo "Setup yay & git ..."
 sudo pacman -S yay git --noconfirm
 
 echo "Installing required packages ..."
-yay --noconfirm -S glances byobu copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
+yay --noconfirm -S keychain glances byobu copyq awesome-terminal-fonts powerline2 powerline-fonts powerline-common nvm
 
 echo "Install common web packages ..."
 yay --noconfirm -S xsel composer mkcert rbenv rbenv-binstubs ruby-build
@@ -55,10 +55,10 @@ echo "Install oh-my-zsh & antigen ..."
 yay --noconfirm -S oh-my-zsh-git antigen
 
 echo "Byobu adjustments ..."
-ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
-rm ~/.byobu/.tmux.conf
-ln -s ~/.tmux.conf ~/.byobu/.tmux.conf
-ln -s ~/.tmux.conf.local ~/.byobu/.tmux.conf.local
+ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
+rm -f ~/.byobu/.tmux.conf
+ln -sf ~/.tmux.conf ~/.byobu/.tmux.conf
+ln -sf ~/.tmux.conf.local ~/.byobu/.tmux.conf.local
 
 echo "Copy config ..."
 cp -rf . ~/
