@@ -48,44 +48,10 @@ echo "  Apple Silicon Edition                   "
 echo "  Requires MacOS Big Sur                  "
 echo "=========================================="
 echo ""
-echo "We need to backup the existing files first..."
-echo "WARNING: Will delete the older backup files!"
+echo "Installing Ruby 2.5 automagically"
 echo ""
 read -p "Press any key to continue ..."
 echo ""
-
-while true; do
-    read -p "Do you want to generate new SSH keys? (y/N): " sshyn
-    case $sshyn in
-        [Yy]* ) GENERATE_SSH=true; break;;
-        [Nn]* ) GENERATE_SSH=false; break;;
-        * ) GENERATE_SSH=false; break;;
-    esac
-done
-
-echo ""
-echo "Backup started ..."
-rm -rf ~/.dotfiles-backup-old
-mv ~/.dotfiles-backup ~/.dotfiles-backup-old
-mkdir -p ~/.dotfiles-backup
-cp -r ~/.ssh/ ~/.dotfiles-backup/.ssh 2>/dev/null || :
-cp -r ~/.teamocil/ ~/.dotfiles-backup/.teamocil 2>/dev/null || :
-cp -r ~/.tmux/ ~/.dotfiles-backup/.tmux 2>/dev/null || :
-cp -r ~/.byobu/ ~/.dotfiles-backup/.byobu 2>/dev/null || :
-cp ~/.tmux.conf ~/.dotfiles-backup/.tmux.conf 2>/dev/null || :
-cp ~/.tmux.conf.local ~/.dotfiles-backup/.tmux.conf.local 2>/dev/null || :
-cp ~/.bashrc ~/.dotfiles-backup/.bashrc 2>/dev/null || :
-cp ~/.bash_profile ~/.dotfiles-backup/.bash_profile 2>/dev/null || :
-cp ~/.zshrc ~/.dotfiles-backup/.zshrc 2>/dev/null || :
-cp ~/.zsh_profile ~/.dotfiles-backup/.zsh_profile 2>/dev/null || :
-cp ~/.profile ~/.dotfiles-backup/.profile 2>/dev/null || :
-cp ~/.zsh_history ~/.dotfiles-backup/.zsh_history 2>/dev/null || :
-cp ~/.zprofile ~/.dotfiles-backup/.zprofile 2>/dev/null || :
-cp ~/.antigenrc ~/.dotfiles-backup/.antigenrc 2>/dev/null || :
-cp ~/.p10k.zsh ~/.dotfiles-backup/.p10k.zsh 2>/dev/null || :
-echo "Backup done ..."
-
-read -p "Press any key to continue ..."
 
 # clear again
 # clear
@@ -134,30 +100,36 @@ esac
 
 # Installation begin
 if $USES_ZSH ; then
-    echo "Installing antigen ..."
-    brew install antigen
-    echo "Installing shell packages ..."
-    brew tap homebrew/cask-fonts
-    brew install --cask font-hack-nerd-font
-    brew install glances gotop htop byobu
-    echo "Installing openssl 1.1 ..."
-    brew install openssl@1.1
-    echo "Installing libffi ..."
-    brew install libffi
-    echo "Installing common web packages ..."
-    brew install composer mkcert rbenv ruby-build nvm
-    echo "Installing tmux ..."
-    brew install tmuxp
+	echo "\n"
+	echo "Uninstalling older rubies ..."
+	brew uninstall ruby -f
+    echo "Preparing ..."
+    export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+	export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+	export RUBY_CFLAGS=-DUSE_FFI_CLOSURE_ALLOC
+	export optflags="-Wno-error=implicit-function-declaration"
+	echo "Installing rbenv ..."
+	brew install rbenv ruby-build
+	echo "Installing ruby 2.5.3 ..."
+	rbenv install 2.5.3
+	rbenv global 2.5.3
+	rbenv rehash
+	echo "Installing ruby 2.5.9 ..."
+	rbenv install 2.5.9
+	rbenv rehash
+	
+	echo "Installing Database (required to install Ruby on Rails) ..."
+	brew install postgresql mysql
 
-    if $GENERATE_SSH ; then
-        echo "Generating SSH keys ..."
-        ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
-    fi
-
-    if $ANDROID ; then
-	    # Not needed anymore. I prefer to install Android Studio
-        echo "Android setup done!"
-    fi
+	echo "Installing Rails 5.2.5 ..."
+	export optflags="-Wno-error=implicit-function-declaration"
+	export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+	export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+	gem install rails -v 5.2.5
+	echo "Installing other gems ..."
+	gem install rake ffi rubocop solargraph
 
     clear
     milk_me
