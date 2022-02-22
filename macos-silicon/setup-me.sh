@@ -143,10 +143,12 @@ if $USES_ZSH ; then
     brew tap homebrew/cask-fonts
     brew install --cask font-hack-nerd-font
     brew install glances gotop htop byobu
-    echo "Installing openssl 1.1"
+    echo "Installing openssl 1.1 ..."
     brew install openssl@1.1
     echo "Installing common web packages ..."
     brew install composer mkcert rbenv ruby-build nvm
+    echo "Installing tmux ..."
+    brew install tmuxp
 
     if $GENERATE_SSH ; then
         echo "Generating SSH keys ..."
