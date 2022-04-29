@@ -339,7 +339,10 @@ alias upd="/usr/bin/update"
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 ## Run neofetch
-neofetch
+# neofetch
 
 ## rbenv
 eval "$(rbenv init -)"
+
+## nvm
+source /usr/share/nvm/init-nvm.sh
