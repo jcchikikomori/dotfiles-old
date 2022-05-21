@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Maximized
 
   # Window title
   title: Alacritty@Garuda
@@ -100,7 +100,7 @@ font:
     family: FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -111,7 +111,7 @@ font:
     family:  FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
@@ -122,7 +122,7 @@ font:
     family:  FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -133,10 +133,10 @@ font:
     family:  FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
-    size: 9.0
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -276,7 +276,8 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.9
+#background_opacity: 0.9
+window.opacity: 0.9
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -406,8 +407,8 @@ mouse:
 # - `mods` (see key bindings)
 #mouse_bindings:
 #  - { mouse: Middle, action: PasteSelection }
-#mouse_bindings:
-#  - { mouse: Left, actiob: CopySelection }
+mouse_bindings:
+  - { mouse: Left, action: CopySelection }
 
 # Key bindings
 #
@@ -576,28 +577,28 @@ key_bindings:
   #print_events: false
 
 # Custom colorscheme fitting Sweetified theme
-colors:
-  primary:
-    background: '0x0a1124'
-    foreground: '0xeec49a'
-  cursor:
-    text:       '0x0a1124'
-    cursor:     '0xeec49a'
-  normal:
-    black:      '0x0a1124'
-    red:        '0x5F4149'
-    green:      '0xEB3247'
-    yellow:     '0xBC4349'
-    blue:       '0xF35645'
-    magenta:    '0xF6A73B'
-    cyan:       '0xFAD32F'
-    white:      '0xeec49a'
-  bright:
-    black:      '0xa6896b'
-    red:        '0x5F4149'
-    green:      '0xEB3247'
-    yellow:     '0xBC4349'
-    blue:       '0xF35645'
-    magenta:    '0xF6A73B'
-    cyan:       '0xFAD32F'
-    white:      '0xeec49a'
+#colors:
+#  primary:
+#    background: '0x0a1124'
+#    foreground: '0xeec49a'
+#  cursor:
+#    text:       '0x0a1124'
+#    cursor:     '0xeec49a'
+#  normal:
+#    black:      '0x0a1124'
+#    red:        '0x5F4149'
+#    green:      '0xEB3247'
+#    yellow:     '0xBC4349'
+#    blue:       '0xF35645'
+#    magenta:    '0xF6A73B'
+#    cyan:       '0xFAD32F'
+#    white:      '0xeec49a'
+#  bright:
+#    black:      '0xa6896b'
+#    red:        '0x5F4149'
+#    green:      '0xEB3247'
+#    yellow:     '0xBC4349'
+#    blue:       '0xF35645'
+#    magenta:    '0xF6A73B'
+#    cyan:       '0xFAD32F'
+#    white:      '0xeec49a'
