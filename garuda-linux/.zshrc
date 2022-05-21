@@ -346,3 +346,6 @@ eval "$(rbenv init -)"
 
 ## nvm
 source /usr/share/nvm/init-nvm.sh
+
+## profile
+source $HOME/.profile
